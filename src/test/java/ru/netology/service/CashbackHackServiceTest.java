@@ -1,8 +1,8 @@
 package ru.netology.service;
 
-import org.testng.IExpectedExceptionsHolder;
-import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
 
@@ -14,7 +14,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(900);
         int expected = 100;
 
-        assert (actual == expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -23,14 +23,14 @@ public class CashbackHackServiceTest {
         int actual = service.remain(1100);
         int expected = 900;
 
-        assert (actual == expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void equallyBoundary() {
         int actual = service.remain(1000);
-        int expected = 1000;
+        int expected = 0;
 
-        assert (actual == expected);
+        Assert.assertEquals(expected, actual);
     }
 }
